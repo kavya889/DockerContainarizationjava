@@ -1,11 +1,11 @@
 # Use an official OpenJDK runtime as a parent image
-FROM openjdk:11-jre-slim
+FROM ubuntu:20.04
 
 # Set the working directory inside the container
-WORKDIR /app
+RUN apt update
 
 # Copy the Java file from your repository to the container
-COPY hello.java /app/
+COPY . . 
 
 # Compile the Java code
 RUN javac hello.java
